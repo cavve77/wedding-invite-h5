@@ -87,204 +87,10 @@
       min-height: 100vh;
       min-height: 100svh;
       margin: 0 auto;
-      padding: 16px 14px calc(var(--bar-height) + var(--safe-bottom) + 34px);
+      padding: 0 0 calc(var(--bar-height) + var(--safe-bottom));
     }
 
-    .hero {
-      position: relative;
-      display: grid;
-      min-height: 74vh;
-      min-height: 74svh;
-      place-items: center;
-      padding: 52px 12px 42px;
-      isolation: isolate;
-    }
-
-    .hero::before,
-    .hero::after {
-      position: absolute;
-      left: 18px;
-      right: 18px;
-      z-index: -1;
-      height: 12px;
-      content: "";
-      background:
-        linear-gradient(90deg, transparent 0 8px, rgba(126, 170, 104, 0.4) 8px 16px, transparent 16px 24px),
-        linear-gradient(var(--green), var(--green));
-      background-size: 24px 12px, 100% 4px;
-      background-position: left top, left 8px;
-      background-repeat: repeat-x, no-repeat;
-      opacity: 0.72;
-      image-rendering: pixelated;
-    }
-
-    .hero::before {
-      top: 18px;
-    }
-
-    .hero::after {
-      bottom: 18px;
-      transform: rotate(180deg);
-    }
-
-    .hero-inner {
-      position: relative;
-      width: 100%;
-      max-width: 640px;
-      text-align: center;
-      animation: heroReveal 1100ms ease-out both;
-    }
-
-    .kicker {
-      margin: 0 0 18px;
-      color: var(--brown);
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(1rem, 4vw, 1.28rem);
-      letter-spacing: 0;
-      text-transform: uppercase;
-    }
-
-    h1 {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: center;
-      gap: 10px 14px;
-      margin: 0;
-      color: var(--brown-deep);
-      font-size: clamp(2.05rem, 8vw, 3.25rem);
-      font-weight: 800;
-      line-height: 1.08;
-      text-shadow: 0 3px 0 rgba(217, 168, 79, 0.35);
-    }
-
-    .amp {
-      color: var(--green-deep);
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 0.56em;
-      transform: translateY(0.04em);
-    }
-
-    .blessing {
-      margin: 24px auto 0;
-      max-width: 18em;
-      color: var(--muted);
-      font-size: clamp(1rem, 3.4vw, 1.22rem);
-      line-height: 1.9;
-    }
-
-    .blessing span {
-      display: block;
-    }
-
-    .pixel-decor {
-      position: absolute;
-      inset: 0;
-      z-index: -1;
-      pointer-events: none;
-    }
-
-    .spark,
-    .leaf,
-    .flower {
-      position: absolute;
-      width: 6px;
-      height: 6px;
-      image-rendering: pixelated;
-      animation: pixelFloat 4.8s ease-in-out infinite;
-    }
-
-    .spark {
-      color: var(--gold);
-      background: currentColor;
-      box-shadow: 6px 0 currentColor, -6px 0 currentColor, 0 6px currentColor, 0 -6px currentColor;
-    }
-
-    .leaf {
-      color: var(--green);
-      background: currentColor;
-      box-shadow: 6px 0 currentColor, 6px 6px currentColor, 12px 6px rgba(79, 125, 69, 0.85);
-      transform: rotate(16deg);
-    }
-
-    .flower {
-      color: var(--rose);
-      background: var(--gold);
-      box-shadow: 6px 0 currentColor, -6px 0 currentColor, 0 6px currentColor, 0 -6px currentColor;
-    }
-
-    .decor-1 { top: 18%; left: 12%; animation-delay: -400ms; }
-    .decor-2 { top: 24%; right: 12%; animation-delay: -1.4s; }
-    .decor-3 { bottom: 26%; left: 9%; animation-delay: -2s; }
-    .decor-4 { right: 8%; bottom: 22%; animation-delay: -2.8s; }
-    .decor-5 { top: 50%; left: 5%; animation-delay: -900ms; }
-    .decor-6 { top: 58%; right: 6%; animation-delay: -1.8s; }
-
-    .farm-strip {
-      position: relative;
-      height: 30px;
-      margin: -18px 4px 24px;
-      overflow: hidden;
-      border-bottom: 4px solid rgba(101, 65, 31, 0.28);
-      background:
-        linear-gradient(90deg, rgba(126, 170, 104, 0.9) 0 8px, rgba(95, 142, 75, 0.9) 8px 16px, rgba(126, 170, 104, 0.9) 16px 24px),
-        linear-gradient(180deg, transparent 0 12px, rgba(154, 112, 64, 0.25) 12px 16px, transparent 16px);
-      background-size: 24px 18px, 100% 22px;
-      image-rendering: pixelated;
-    }
-
-    .details {
-      margin: 0 auto 22px;
-      padding: 18px;
-      border: 2px solid rgba(101, 65, 31, 0.22);
-      border-radius: 8px;
-      background: rgba(255, 250, 231, 0.88);
-      box-shadow: 0 10px 0 rgba(154, 112, 64, 0.1), 0 18px 36px var(--cream-shadow);
-      backdrop-filter: blur(6px);
-    }
-
-    .details h2,
-    .invite-section h2 {
-      margin: 0 0 14px;
-      color: var(--brown-deep);
-      font-size: clamp(1.22rem, 4.8vw, 1.58rem);
-      line-height: 1.3;
-    }
-
-    .detail-list {
-      display: grid;
-      gap: 12px;
-      margin: 0;
-    }
-
-    .detail-row {
-      display: grid;
-      grid-template-columns: 4.5em 1fr;
-      gap: 10px;
-      align-items: start;
-      padding: 10px 0;
-      border-top: 1px dashed rgba(101, 65, 31, 0.24);
-    }
-
-    .detail-row:first-child {
-      border-top: 0;
-    }
-
-    .detail-row dt {
-      color: var(--green-deep);
-      font-weight: 700;
-    }
-
-    .detail-row dd {
-      min-width: 0;
-      margin: 0;
-      color: var(--ink);
-      line-height: 1.75;
-      overflow-wrap: anywhere;
-    }
-
-    .invite-section {
-      position: relative;
+    .invite-only {
       margin: 0 auto;
     }
 
@@ -292,19 +98,12 @@
       position: relative;
       min-height: 360px;
       overflow: hidden;
-      border: 3px solid rgba(101, 65, 31, 0.24);
-      border-radius: 8px;
-      background:
-        linear-gradient(45deg, rgba(217, 168, 79, 0.12) 25%, transparent 25% 50%, rgba(126, 170, 104, 0.12) 50% 75%, transparent 75%),
-        rgba(255, 250, 231, 0.9);
-      background-size: 18px 18px;
-      box-shadow: 0 10px 0 rgba(101, 65, 31, 0.12), 0 18px 34px var(--cream-shadow);
+      background: transparent;
       image-rendering: auto;
     }
 
     .invite-frame.is-loaded {
-      background: rgba(255, 250, 231, 0.92);
-      animation: inviteBreath 5.8s ease-in-out infinite;
+      background: transparent;
     }
 
     .invite-image {
@@ -343,92 +142,6 @@
       color: var(--muted);
       font-size: 0.96rem;
       line-height: 1.8;
-    }
-
-    .mascots {
-      position: relative;
-      min-height: 84px;
-      margin: 18px 0 0;
-      pointer-events: none;
-    }
-
-    .optional-sprite {
-      position: absolute;
-      bottom: 0;
-      display: none;
-      width: clamp(52px, 18vw, 96px);
-      height: auto;
-      image-rendering: pixelated;
-      filter: drop-shadow(0 8px 0 rgba(101, 65, 31, 0.12));
-      animation: spriteBob 3.6s ease-in-out infinite;
-    }
-
-    .optional-sprite.is-visible {
-      display: block;
-    }
-
-    .sprite-cat { left: 5%; animation-delay: -500ms; }
-    .sprite-red-panda { right: 5%; animation-delay: -1.1s; }
-    .sprite-one { left: 28%; width: clamp(44px, 14vw, 72px); animation-delay: -1.7s; }
-    .sprite-two { right: 28%; width: clamp(44px, 14vw, 72px); animation-delay: -2.4s; }
-
-    .css-sprite {
-      position: absolute;
-      bottom: 8px;
-      width: 44px;
-      height: 36px;
-      image-rendering: pixelated;
-      animation: spriteBob 3.8s ease-in-out infinite;
-    }
-
-    .css-sprite::before,
-    .css-sprite::after {
-      position: absolute;
-      content: "";
-      image-rendering: pixelated;
-    }
-
-    .css-sprite-left {
-      left: 12%;
-      background: var(--rose);
-      box-shadow:
-        8px -8px var(--rose),
-        16px -8px var(--rose),
-        24px -8px var(--rose),
-        32px 0 var(--rose),
-        8px 8px var(--brown-deep),
-        28px 8px var(--brown-deep);
-    }
-
-    .css-sprite-left::before {
-      top: 8px;
-      left: 10px;
-      width: 6px;
-      height: 6px;
-      background: var(--ink);
-      box-shadow: 18px 0 var(--ink), 8px 10px var(--paper-soft);
-    }
-
-    .css-sprite-right {
-      right: 12%;
-      background: var(--green);
-      box-shadow:
-        -8px 8px var(--green),
-        8px -8px var(--green),
-        16px -8px var(--green),
-        24px 0 var(--green),
-        8px 8px var(--brown-deep),
-        26px 8px var(--brown-deep);
-      animation-delay: -1.8s;
-    }
-
-    .css-sprite-right::before {
-      top: 10px;
-      left: 12px;
-      width: 6px;
-      height: 6px;
-      background: var(--ink);
-      box-shadow: 16px 0 var(--ink), 8px 10px var(--paper-soft);
     }
 
     .toast {
@@ -493,7 +206,8 @@
       display: grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
       gap: 8px;
-      width: min(100%, 760px);
+      width: 100%;
+      max-width: 760px;
       margin: 0 auto;
     }
 
@@ -693,63 +407,6 @@
       border: 0;
     }
 
-    @keyframes heroReveal {
-      from {
-        opacity: 0;
-        transform: translateY(14px) scale(0.985);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-      }
-    }
-
-    @keyframes pixelFloat {
-      0%, 100% {
-        opacity: 0.68;
-        transform: translateY(0) scale(1);
-      }
-      50% {
-        opacity: 1;
-        transform: translateY(-9px) scale(1.08);
-      }
-    }
-
-    @keyframes inviteBreath {
-      0%, 100% {
-        transform: scale(1);
-        box-shadow: 0 10px 0 rgba(101, 65, 31, 0.12), 0 18px 34px var(--cream-shadow);
-      }
-      50% {
-        transform: scale(1.006);
-        box-shadow: 0 10px 0 rgba(101, 65, 31, 0.14), 0 22px 40px rgba(95, 65, 30, 0.24);
-      }
-    }
-
-    @keyframes spriteBob {
-      0%, 100% {
-        transform: translateY(0) rotate(-1deg);
-      }
-      50% {
-        transform: translateY(-7px) rotate(1deg);
-      }
-    }
-
-    @media (min-width: 680px) {
-      .page {
-        padding-right: 22px;
-        padding-left: 22px;
-      }
-
-      .details {
-        padding: 22px 24px;
-      }
-
-      .detail-row {
-        grid-template-columns: 5.5em 1fr;
-      }
-    }
-
     @media (max-width: 360px) {
       .action-inner {
         gap: 6px;
@@ -761,12 +418,6 @@
 
       .action-button {
         min-height: 54px;
-      }
-    }
-
-    @media (orientation: landscape) and (max-height: 520px) {
-      .hero {
-        min-height: 520px;
       }
     }
 
@@ -792,51 +443,7 @@
 </head>
 <body>
   <main class="page" aria-label="婚礼电子请帖">
-    <section class="hero" aria-labelledby="wedding-title">
-      <div class="pixel-decor" aria-hidden="true">
-        <span class="spark decor-1"></span>
-        <span class="leaf decor-2"></span>
-        <span class="flower decor-3"></span>
-        <span class="spark decor-4"></span>
-        <span class="leaf decor-5"></span>
-        <span class="flower decor-6"></span>
-      </div>
-      <div class="hero-inner">
-        <p class="kicker">Wedding Invitation</p>
-        <h1 id="wedding-title">
-          <span>赵唯</span>
-          <span class="amp">&amp;</span>
-          <span>王悠成</span>
-        </h1>
-        <p class="blessing">
-          <span>人生从此将展开新的一天</span>
-          <span>愿未来的每一天都充满幸福与光明</span>
-        </p>
-      </div>
-    </section>
-
-    <div class="farm-strip" aria-hidden="true"></div>
-
-    <section class="details" aria-labelledby="details-title">
-      <h2 id="details-title">婚礼信息</h2>
-      <dl class="detail-list">
-        <div class="detail-row">
-          <dt>时间</dt>
-          <dd>2026年6月13日 中午</dd>
-        </div>
-        <div class="detail-row">
-          <dt>地点</dt>
-          <dd>红梅公园听松楼花园酒店 一楼楓雅聚包厢</dd>
-        </div>
-        <div class="detail-row">
-          <dt>地址</dt>
-          <dd>江苏省常州市天宁区罗汉路1号红梅公园听松楼花园酒店 一楼楓雅聚包厢</dd>
-        </div>
-      </dl>
-    </section>
-
-    <section class="invite-section" aria-labelledby="invite-title">
-      <h2 id="invite-title">电子请帖</h2>
+    <section class="invite-only" aria-label="电子请帖图片">
       <div class="invite-frame" id="inviteFrame">
         <img class="invite-image" id="inviteImage" alt="赵唯与王悠成的婚礼电子请帖" hidden>
         <div class="asset-placeholder" id="invitePlaceholder" role="status">
@@ -847,14 +454,6 @@
             </p>
           </div>
         </div>
-      </div>
-      <div class="mascots" aria-hidden="true">
-        <img class="optional-sprite sprite-cat" data-optional-src="assets/pixel-cat.png" alt="">
-        <img class="optional-sprite sprite-red-panda" data-optional-src="assets/pixel-red-panda.png" alt="">
-        <img class="optional-sprite sprite-one" data-optional-src="assets/pixel-sprite-1.png" alt="">
-        <img class="optional-sprite sprite-two" data-optional-src="assets/pixel-sprite-2.png" alt="">
-        <span class="css-sprite css-sprite-left"></span>
-        <span class="css-sprite css-sprite-right"></span>
       </div>
     </section>
   </main>
@@ -1000,30 +599,6 @@
 
         inviteImage.addEventListener("error", tryNextImage);
         tryNextImage();
-      }
-
-      function loadOptionalSprites() {
-        var sprites = document.querySelectorAll("[data-optional-src]");
-        sprites.forEach(function (sprite) {
-          var src = sprite.getAttribute("data-optional-src");
-          if (!src) {
-            return;
-          }
-
-          sprite.addEventListener("load", function () {
-            sprite.classList.add("is-visible");
-          });
-
-          sprite.addEventListener("error", function () {
-            sprite.classList.remove("is-visible");
-          });
-
-          assetExists(src).then(function (exists) {
-            if (exists !== false) {
-              sprite.src = src;
-            }
-          });
-        });
       }
 
       function openViewer() {
@@ -1284,7 +859,6 @@
       });
 
       loadInviteImage();
-      loadOptionalSprites();
       initMusic();
     })();
   </script>
